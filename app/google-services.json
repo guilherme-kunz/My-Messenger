@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661868074420",
+    "project_id": "my-messenger-5193e",
+    "storage_bucket": "my-messenger-5193e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661868074420:android:ed014448352e277457cee1",
+        "android_client_info": {
+          "package_name": "guilhermekunz.com.br.mymessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661868074420-7pr0dihe078d31g6fe1dp5ud0sg9ugop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS5IVb4ZH8VbxF0wGWRsaMYnh6FRhrzdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661868074420-7pr0dihe078d31g6fe1dp5ud0sg9ugop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

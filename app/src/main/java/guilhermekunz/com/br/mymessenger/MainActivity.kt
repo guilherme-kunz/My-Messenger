@@ -1,23 +1,40 @@
 package guilhermekunz.com.br.mymessenger
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
+import guilhermekunz.com.br.mymessenger.Fragments.ChatsFragment
+import guilhermekunz.com.br.mymessenger.Fragments.SearchFragment
+import guilhermekunz.com.br.mymessenger.Fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(findViewById(R.id.toolbar_main))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        val toolbar: Toolbar = findViewById(R.id.toolbar_main)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = ""
+
+        val tabLayout: TabLayout = findViewById(R.id.tablayout)
+        val viewPager: ViewPager = findViewById(R.id.view_pager)
+        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+        viewPagerAdapter.addFragment(ChatsFragment(), "Bate-Papo")
+        viewPagerAdapter.addFragment(SearchFragment(), "Pesquisar")
+        viewPagerAdapter.addFragment(SettingsFragment(), "Configurações")
+
+        viewPager.adapter = viewPagerAdapter
+        tabLayout.setupWithViewPager(viewPager)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,4 +52,34 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    internal class ViewPagerAdapter(fragmentManager: FragmentManager) :
+        FragmentPagerAdapter(fragmentManager) {
+
+        private val fragments: ArrayList<Fragment>
+        private val titles: ArrayList<String>
+
+        init {
+            fragments = ArrayList<Fragment>()
+            titles = ArrayList<String>()
+        }
+
+        override fun getCount(): Int {
+           return fragments.size
+        }
+
+        override fun getItem(position: Int): Fragment {
+            return fragments[position]
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            fragments.add(fragment)
+            titles.add(title)
+        }
+
+        override fun getPageTitle(i: Int): CharSequence? {
+            return titles[i]
+        }
+    }
+
 }

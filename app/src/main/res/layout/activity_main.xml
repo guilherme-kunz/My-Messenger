@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    tools:context=".MainActivity"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -24,17 +25,21 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_profile"
-                android:tint="@android:color/white"></de.hdodenhof.circleimageview.CircleImageView>
+                android:tint="@android:color/white"
+                >
+            </de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
-                android:id="@+id/usuario"
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="26dp"
                 android:textColor="@android:color/white"
-                android:text="Usuário"
+                android:text="Username"
                 android:textSize="18sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"
+                >
+            </TextView>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -43,14 +48,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            app:tabIndicatorColor="@android:color/white"></com.google.android.material.tabs.TabLayout>
+            app:tabIndicatorColor="@android:color/white"
+            >
+        </com.google.android.material.tabs.TabLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="wrap_content"
+        >
+    </androidx.viewpager.widget.ViewPager>
 
     <include layout="@layout/content_main" />
 

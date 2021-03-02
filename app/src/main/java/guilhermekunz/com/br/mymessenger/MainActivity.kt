@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        viewPagerAdapter.addFragment(ChatsFragment(), "Bate-Papo")
-        viewPagerAdapter.addFragment(SearchFragment(), "Pesquisar")
-        viewPagerAdapter.addFragment(SettingsFragment(), "Configurações")
+        viewPagerAdapter.addFragment(ChatsFragment(), "Chats")
+        viewPagerAdapter.addFragment(SearchFragment(), "Search")
+        viewPagerAdapter.addFragment(SettingsFragment(), "Settings")
 
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
@@ -56,13 +56,8 @@ class MainActivity : AppCompatActivity() {
     internal class ViewPagerAdapter(fragmentManager: FragmentManager) :
         FragmentPagerAdapter(fragmentManager) {
 
-        private val fragments: ArrayList<Fragment>
-        private val titles: ArrayList<String>
-
-        init {
-            fragments = ArrayList<Fragment>()
-            titles = ArrayList<String>()
-        }
+        private val fragments: ArrayList<Fragment> = ArrayList<Fragment>()
+        private val titles: ArrayList<String> = ArrayList<String>()
 
         override fun getCount(): Int {
            return fragments.size

@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                 if (p0.exists()){
                     val user: Users? = p0.getValue(Users::class.java)
 
-                    user_name.text = user!!.getUserName()
-                    Picasso.get().load(user.getProfile()).placeholder(R.drawable.profile).into(profile_image)
+                    user_name.text = user!!.username
+                    Picasso.get().load(user.profile).placeholder(R.drawable.profile).into(profile_image)
                 }
             }
 

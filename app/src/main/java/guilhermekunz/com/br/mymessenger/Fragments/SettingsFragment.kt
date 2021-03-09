@@ -165,7 +165,7 @@ class SettingsFragment : Fragment() {
 
     private fun uploadImageToDataBase() {
         val progressBar = ProgressDialog(context)
-        progressBar.setMessage("image is uploading, please wai...")
+        progressBar.setMessage("image is uploading, please wait...")
         progressBar.show()
 
         if (imageUri != null) {

@@ -81,8 +81,8 @@ class RegisterActivity : AppCompatActivity() {
                                 "https://firebasestorage.googleapis.com/v0/b/my-messenger-5193e.appspot.com/o/cover.jpg?alt=media&token=fc34c5e0-f4b5-4c7e-9614-32f122ba83c2"
                             userHashMap["status"] = "offline"
                             userHashMap["search"] = username.toLowerCase()
-                            userHashMap["facebook"] = "https://m.facebook.com"
-                            userHashMap["instagram"] = "https://m.instagram.com"
+                            userHashMap["facebook"] = "https://wwww.facebook.com"
+                            userHashMap["instagram"] = "https://wwww.instagram.com"
 
                             refUsers.updateChildren(userHashMap)
                                 .addOnCompleteListener { task ->
